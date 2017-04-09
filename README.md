@@ -1,2 +1,2 @@
 # angular-learnings
-This repisitory is good staring point to learn AngularJs.
+This repisitory is good starting point to learn AngularJs.
