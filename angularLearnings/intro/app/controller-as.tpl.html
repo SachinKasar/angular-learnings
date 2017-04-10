@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <h2>Learning : Controller As.</h2>
+    <script src="../vendor/js/angular.js"></script>
+    <script src="common/controller/controller-as.controller.js"></script>
+</head>
+
+<body ng-app="controllerAsModule" >
+    
+    <div ng-controller="FirstController as cntrl1">
+        <div>
+            {{cntrl1.name}}
+        </div>
+        <div ng-controller="SecondController as cntrl2">
+            {{cntrl2.name}}
+        </div>
+    </div>
+</body>
+</html>
