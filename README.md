@@ -19,7 +19,7 @@ c:\>git clone https://github.com/SachinKasar/angular-learnings.git
 3. Start playing around the various example.
 You can use any IDE, personally I started with Brackets , which allows "Live Preview" for the templates. 
 
-4. Feel free to add new topica based expample in this repo.
+4. Feel free to add new topics based expample in this repo.
 
 
 * How to commit in Git (with Git Bash)
