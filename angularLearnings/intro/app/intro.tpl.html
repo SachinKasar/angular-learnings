@@ -6,8 +6,9 @@
   <script src="../vendor/js/angular.js"></script>
 </head>
 
-<body ng-app ng-init="topic = 'Basic AngularJS ng-app '"> <!-- Angular bootstrap and ng-init -->
-    <span>  {{topic}} </span>
+<body ng-app ng-init="topic = 'Started with ng-app, ng-init and ng-if '"> <!-- Angular bootstrap and ng-init -->
+    <span ng-if="topic">{{topic}}</span>
+    <span ng-if="!topic"> No Topic for Learning.   </span>
 </body>
 	
 
