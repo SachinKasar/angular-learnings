@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <h2>Learning : Loaded Controller.</h2>
+    <script src="../vendor/js/angular.js"></script>
+    <script src="common/controller/calc-in-controller.js"></script>
+</head>
+
+<body ng-app="calcModule" ng-controller="CalcController">
+    
+    <div >
+        <div>
+            Number1: <input type="number" ng-model="number1">
+        </div>
+        <div>
+            Number2: <input type="number" ng-model="number2">
+        </div>
+        </br><div>
+             <button ng-click="add(number1,number2)">Add</button>
+            <button ng-click="substract(number1,number2)">Substract</button>
+             <button ng-click="divide(number1,number2)">Divide</button>
+            <button ng-click="multiply(number1,number2)">Multiply</button>
+        </div>
+         </br><div>
+             Result : {{number3}}
+        </div>
+    </div>
+    </body>
+</html>

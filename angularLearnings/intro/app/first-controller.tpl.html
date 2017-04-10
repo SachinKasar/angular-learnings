@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <h2>Learning : Angular controller (ng-controller) - property and functionality in controller. </h2>
+	<script src="../vendor/js/angular.js"></script>
+    <script src="common/controller/first-controller.controller.js"></script>
+</head>
+
+ 
+<body ng-app="firstCntrl" ng-controller="FirstCtrl"> <!-- Angular bootstrap -->
+    <div>
+		This is our : <input type="text" ng-model="name"><br>
+		</br>Get By Scoped Variable - <h1 style="color:red"> {{name}} </h1>
+        </br>Get By Scoped Function - <h1 style="color:blue"> {{getName()}} </h1>
+	</div>
+</body>
+
+</html>

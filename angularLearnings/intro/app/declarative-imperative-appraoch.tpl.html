@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <h2>Learning : Declarative templates, Imperative Logic.</h2>
+    <script src="../vendor/js/angular.js"></script>
+    <script src="common/controller/declarative-imperative-appraoch.js"></script>
+</head>
+
+<body ng-app="declarativeImperativeModule" ng-controller="DeclarativeImperativeController">
+    
+    <div >
+        <div>
+            <textarea ng-model="message">{{message}}</textarea>
+        </div>
+        <div>
+             <button ng-disabled="!hasValidLength()" ng-click="clear()">Clear</button>
+        </div>
+    </div>
+    <span>Remaining: {{remaining()}}</span>
+</body>
+</html>

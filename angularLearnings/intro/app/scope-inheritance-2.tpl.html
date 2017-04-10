@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+     <h2>Learning : Reading and writing in scope inheritance.</h2>
+	<script src="../vendor/js/angular.js"></script>
+    <script src="common/controller/scope-inheritance-2.controller.js"></script>
+</head>
+    
+<body ng-app="scopeModule2" ng-init="name='World'"> <!-- Bootstrap creating $rootscope -->
+    <h1>Hello, {{name}}</h1>
+    <div ng-controller="ScopeController2"> <!-- new scope created here -->
+        Say hello to:
+        <input type="text" ng-model="name"> 
+        <h2>Hello, {{name}}!</h2>
+    </div>
+</body>
+
+</html>
+

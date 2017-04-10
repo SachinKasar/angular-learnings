@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <h2>Learning : Scope inheritance, ng-repeat and READ in scope inheritance</h2>
+	<script src="../vendor/js/angular.js"></script>
+    <script src="common/controller/scope-inheritance-1.controller.js"></script>
+</head>
+
+ 
+<body ng-app="scopeModule1"> <!-- Application bootstrap creating $rootscope -->
+   <ul ng-controller="ScopeController1">  <!-- parent scope -->
+    <li ng-repeat="team in teams"> <!-- child scope -->
+        {{team.name}} has size of {{team.size}}
+        </br>{{getPercentage(team.size)}} % of the Organization's size <!-- Accessing getPercentage from parent scope -->
+    </li>
+    <hr> Organization's total size : {{totalCount}} 
+ </ul>
+    
+</body>
+
+</html>
+
