@@ -1,5 +1,5 @@
 // Factories are simple JS function rather than constructor function
-// i.e. through factories we can return any object straigh forward.
+// i.e. through factories we can return any object straightforward.
 
 serviceAndFactoryModule.factory('EmployeeDetailsFactory', function () {
     return {
