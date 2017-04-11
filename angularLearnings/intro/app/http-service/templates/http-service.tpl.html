@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <h2>Learning : $http service and promises.</h2>
+    <script src="../../../vendor/js/angular.js"></script>
+
+    <script src="../app.js"></script>
+    <script src="../services/http-service.service.js"></script>
+    <script src="../controllers/http-service.controller.js"></script>
+    
+</head>
+
+<body ng-app="httpServiceModule" ng-controller="HttpServiceController as cntrl">
+    
+    <div >
+         </br>
+        <div ng-repeat="employee in cntrl.employees">
+            </br>Name : <strong>{{employee.name}}</strong>
+            </br>Id : <strong>{{employee.id}}</strong>
+            </br>Location : <strong>{{employee.location}}</strong>
+        </div>
+    </div>
+    
+</body>
+</html>
