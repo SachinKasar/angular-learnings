@@ -1,27 +1,60 @@
 <!DOCTYPE html>
 <html lang="">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <h2>Learning : $http service and promises.</h2>
+
+
+
+    <link href="../../../vendor/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../vendor/css/bootstrap-theme.min.css" rel="stylesheet">
     <script src="../../../vendor/js/angular.js"></script>
 
     <script src="../app.js"></script>
     <script src="../services/http-service.service.js"></script>
     <script src="../controllers/http-service.controller.js"></script>
-    
+
 </head>
 
 <body ng-app="httpServiceModule" ng-controller="HttpServiceController as cntrl">
-    
-    <div >
-         </br>
-        <div ng-repeat="employee in cntrl.employees">
-            </br>Name : <strong>{{employee.name}}</strong>
-            </br>Id : <strong>{{employee.id}}</strong>
-            </br>Location : <strong>{{employee.location}}</strong>
+
+    <div class="container">
+        </br>
+        <div class="alert alert-success" ng-if="cntrl.successFetchNotificationMessage"> {{cntrl.successFetchNotificationMessage}} </div>
+        <div class="alert alert-danger" ng-if="cntrl.errorFetchNotificationMessage"> {{cntrl.errorFetchNotificationMessage}} </div>
+        <div class="row">
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="employee in cntrl.employees" ng-click="cntrl.showSelectedEmployee($index)">
+                    <span>{{employee.name}} - {{employee.location}}</span>
+                </li>
+            </ul>
+
         </div>
+
+        <div class="row">
+
+            <div class="media">
+                <div class="media-body">
+                    <h4 class="media-heading">{{cntrl.selectedEmployee.name}}</h4>
+                    <p>
+                        <span ng-hide="cntrl.updateFlag">{{cntrl.selectedEmployee.location}} </span>
+                        <span>
+                            <input type="text" placeholder="Enter Location" ng-show="cntrl.updateFlag" ng-model="cntrl.selectedEmployee.location"> </input>  
+                        </span>
+
+                    </p>
+            
+                    <button ng-hide="!cntrl.selectedEmployee || cntrl.updateFlag" ng-click="cntrl.toggleUpdateFlag()">Edit</button>
+                    <button ng-show="cntrl.selectedEmployee && cntrl.updateFlag" ng-click="cntrl.updateEmployee()">Save</button>
+                </div>
+            </div>
+        </div>
+
+
     </div>
-    
+
 </body>
+
 </html>

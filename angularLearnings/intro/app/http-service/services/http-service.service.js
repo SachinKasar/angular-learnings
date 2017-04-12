@@ -10,4 +10,11 @@ httpServiceModule.service('httpService', function($http) {  // dependency for $h
         return promise2;
     }
     
+    this.updateEmployee = function(employeeDetails) {
+         return $http.put("http://localhost:3000/employees/"+employeeDetails.id,employeeDetails)
+                .then(function(response) {
+                    console.log("PUT Done --- " + response);
+                });
+    }
+    
 });
