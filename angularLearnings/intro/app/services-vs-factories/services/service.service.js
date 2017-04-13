@@ -2,13 +2,13 @@
 // i.e. you can NOT explicitly retrun primitives or any other object straightforward.
 
 serviceAndFactoryModule.service('EmployeeDetailsService', function() {
-     // var this = {};     // Angular will add this by default
+     // var this = {};     // Angular will add this by default.
     
     this.getEmployeeDetails = function () {
         return {"name":"John","Age":"30"};
     };
     
-    // return this        // Angular will add this by default
+    // return this        // Angular will add this by default.
 }); 
 
 
