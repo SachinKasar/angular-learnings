@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="" ng-app="directiveModule" ng-controller="DirectiveController">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link href="../../../vendor/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../vendor/css/bootstrap-theme.min.css" rel="stylesheet">
+    <script src="../../../vendor/js/angular.js"></script>
+    <script src="../app.js"></script>
+    <script src="../services/directive-basics.service.js"></script>
+    <script src="../directives/shared-scope.directive.js"></script>
+    <script src="../controllers/directives.controller.js"></script>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="jumbotron">
+            <h2>Learning : Angular Directives - Shared Scope.</h2>
+            <ul class="list-unstyled">
+                <li>
+                    <ul>
+                        <li>Scope sharing between parent controller and directive</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        
+        <button type="submit" class="btn btn-primary btn-md" ng-click="reverseName()">Reverse</button>  : {{name}}
+        <div shared-scope></div>
+
+
+    </div>
+</body>
+
+
+</html>

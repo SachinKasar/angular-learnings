@@ -1,8 +1,12 @@
 directiveModule.controller("DirectiveController", DirectiveController);
 
 
-function DirectiveController(directiveService) {
+function DirectiveController($scope,directiveService) {
     // this = $scope;  // Angular do this by default for Controller As syntax 
-    var self = this
-    self.mainControllerScopeProperty = "Value From Main Controller !!!";
+     
+    
+    $scope.name = "Angular";
+    $scope.reverseName = function(){
+        $scope.name = $scope.name.split('').reverse().join('');
+    };
 }
