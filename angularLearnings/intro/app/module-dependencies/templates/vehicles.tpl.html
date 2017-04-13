@@ -1,28 +1,44 @@
 <!DOCTYPE html>
 <html lang="">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <h2>Learning : Modules And Services Dependencies.</h2>
+
+    <link href="../../../vendor/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../vendor/css/bootstrap-theme.min.css" rel="stylesheet">
     <script src="../../../vendor/js/angular.js"></script>
 
     <script src="../app.js"></script>
     <script src="../service/two-wheeled.service.js"></script>
     <script src="../service/four-wheeled.service.js"></script>
     <script src="../controller/vehicles.controller.js"></script>
-    
+
 </head>
 
-<body ng-app="vehiclesApp" ng-controller="VehiclesController">
-    
-    <div >
-         
-        </br><div>
-            <button ng-click="getVehiclesSpecs('Two')">Two Wheeled</button>
-            <button ng-click="getVehiclesSpecs('Four')">Four Wheeled</button>
-           </br></br>  Vehicle --- <strong>{{vehicleSpecs.name}}</strong>  --- Wheels --- <strong>{{vehicleSpecs.wheels}}</strong>
-        </div>
-         
+<body ng-app="vehiclesApp" ng-controller="VehiclesController" class="container">
+    <div class="jumbotron">
+        <h2>Learning : Modules And Services Dependencies.</h2>
+        <ul class="list-unstyled">
+            <li>
+                <ul>
+                    <li>Modules And Services Dependencies</li>
+                </ul>
+            </li>
+        </ul>
     </div>
-    </body>
+
+    <div>
+
+        </br>
+        <div>
+            <button type="submit" class="btn btn-primary btn-sm" ng-click="getVehiclesSpecs('Two')">Two Wheeled</button>
+            <button type="submit" class="btn btn-primary btn-sm" ng-click="getVehiclesSpecs('Four')">Four Wheeled</button>
+            </br>
+            </br> Vehicle --- <strong>{{vehicleSpecs.name}}</strong> --- Wheels --- <strong>{{vehicleSpecs.wheels}}</strong>
+        </div>
+
+    </div>
+</body>
+
 </html>

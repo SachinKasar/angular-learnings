@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <h2>Learning : CRUD with $http service and promises.</h2>
+    
 
     <link href="../../../vendor/css/bootstrap.min.css" rel="stylesheet">
     <link href="../../../vendor/css/bootstrap-theme.min.css" rel="stylesheet">
@@ -17,6 +17,18 @@
 
 <body>
     <div class="container">
+        
+        <div class="jumbotron">
+        <h2>Learning : CRUD with $http service and promises.</h2>
+        <ul class="list-unstyled">
+            <li>
+                <ul>
+                    <li>CRUD with $http service and promises</li>
+                </ul>
+            </li>
+        </ul>
+      </div>
+        
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -44,22 +56,22 @@
                     <span class="media-heading">Name : 
                     <span  ng-hide="cntrl.updateFlag">{{cntrl.selectedEmployee.name}}</span>
                     <span>
-                            <input type="text" placeholder="Enter Name" ng-show="cntrl.updateFlag" ng-model="cntrl.selectedEmployee.name"> </input>  
+                            <input type="text" class='form-control' placeholder="Enter Name" ng-show="cntrl.updateFlag" ng-model="cntrl.selectedEmployee.name"> </input>  
                         </span>
                     </span>
                     <p>
                         <span>Location : 
                         <span ng-hide="cntrl.updateFlag">{{cntrl.selectedEmployee.location}} </span>
                         <span>
-                            <input type="text" placeholder="Enter Location" ng-show="cntrl.updateFlag" ng-model="cntrl.selectedEmployee.location"> </input>  
+                            <input type="text" class='form-control' placeholder="Enter Location" ng-show="cntrl.updateFlag" ng-model="cntrl.selectedEmployee.location"> </input>  
                         </span>
                         </span>
                     </p>
 
-                    <button ng-hide="!cntrl.selectedEmployee || cntrl.updateFlag" ng-click="cntrl.toggleUpdateFlag()">Edit</button>
-                    <button ng-show="cntrl.selectedEmployee && cntrl.updateFlag" ng-click="cntrl.updateEmployee()">Save</button>
-                    <button ng-click="cntrl.addEmployee()">Add</button>
-                    <button ng-click="cntrl.deleteEmployee()">Delete</button>
+                    <button type="submit" class="btn btn-primary btn-sm" ng-hide="!cntrl.selectedEmployee || cntrl.updateFlag" ng-click="cntrl.toggleUpdateFlag()">Edit</button>
+                    <button type="submit" class="btn btn-primary btn-sm" ng-show="cntrl.selectedEmployee && cntrl.updateFlag" ng-click="cntrl.updateEmployee()">Save</button>
+                    <button type="submit" class="btn btn-primary btn-sm" ng-click="cntrl.addEmployee()">Add</button>
+                    <button type="submit" class="btn btn-primary btn-sm" ng-click="cntrl.deleteEmployee()">Delete</button>
                 </div>
             </div>
         </div>
