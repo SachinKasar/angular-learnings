@@ -11,6 +11,7 @@
     <script src="../../../vendor/js/angular.js"></script>
     <script src="../app.js"></script>
     <script src="../services/filters.service.js"></script>
+    <script src="../filters/customized.filters.js"></script>
     <script src="../controllers/filters.controller.js"></script>
 
 </head>
@@ -51,10 +52,10 @@
                     <input type="text" class="form-control" id="searchTxt" ng-model="searchText">
                 </div>
 
-                <tr ng-repeat="employee in cntrl.employees | orderBy : 'name' | filter : searchText" ng-click="cntrl.showSelectedEmployee($index)">
-                    <td>{{$index + 1}}</td>
-                    <td>{{employee.name}}</td>
-                    <td>{{employee.location}}</td>
+                <tr ng-repeat="employee in cntrl.employees | orderBy : 'name' | filter : searchText" ng-click="cntrl.showSelectedEmployee(employee)">
+                    <td>{{$index+1}}</td>
+                     <td><span ng-bind-html="employee.name | highlightWord : searchText">{{ employee.name}}</span></td>
+                     <td>{{employee.location}}</td>
                     <td>{{employee.phone}}</td>
                     <td>{{employee.countryCode}}</td>
                 </tr>
@@ -66,26 +67,27 @@
             <div class="media">
                 <div class="media-body">
                     <span class="media-heading">Name : 
-                    <span  ng-hide="cntrl.updateFlag">{{cntrl.selectedEmployee.name  | lowercase}}</span>
+                     <span  ng-hide="cntrl.updateFlag">{{cntrl.selectedEmployee.name  | lowercase}}</span>
+
                     <span>
-                            <input class="form-control" type="text" placeholder="Name" ng-show="cntrl.updateFlag" ng-model="cntrl.selectedEmployee.name"/>
-                        </span>
-                    </span>
+                            <input class="form-control" type="text" placeholder="Name" ng-show="cntrl.updateFlag" ng-model="cntrl.selectedEmployee.name"/> 
+                       
                     <p>
                         <span>Location : 
                         <span ng-hide="cntrl.updateFlag">{{cntrl.selectedEmployee.location  | uppercase}} </span>
-                        <span>
+                    <span>
                             <input class="form-control" type="text" placeholder="Location" ng-show="cntrl.updateFlag" ng-model="cntrl.selectedEmployee.location"/> 
                         </span>
-                        </span>
+                    </span>
                     </p>
 
                     <p>
                         <span>Date : {{ cntrl.today  | date : 'dd-MMM-yyyy'}} </span>
                     </p>
                     <p>
-                    <span class="media-heading">Phone : 
-                    <span  ng-hide="cntrl.updateFlag">{{cntrl.selectedEmployee.phone}}</span>
+                        <span class="media-heading">Phone : 
+                        <span  ng-hide="cntrl.updateFlag"><strong>{{cntrl.selectedEmployee.phone | formatContactNumber : cntrl.selectedEmployee.countryCode}}</strong></span>
+
                     </p>
 
                     <p>

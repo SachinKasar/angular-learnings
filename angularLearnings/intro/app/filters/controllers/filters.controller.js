@@ -20,12 +20,11 @@ function FiltersController(filtersService) {
     );
 
 
-    this.showSelectedEmployee = function (index) {
+    this.showSelectedEmployee = function (employee) {
         this.successFetchNotificationMessage = undefined;
         this.errorFetchNotificationMessage = undefined;
-        this.selectedEmployee = self.employees[index];
-
-    }
+        this.selectedEmployee = employee;
+     }
 
     this.toggleUpdateFlag = function () {
         this.updateFlag = !this.updateFlag;
