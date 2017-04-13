@@ -11,7 +11,7 @@
     <script src="../../../vendor/js/angular.js"></script>
     <script src="../app.js"></script>
     <script src="../services/directive-basics.service.js"></script>
-    <script src="../directives/shared-scope.directive.js"></script>
+    <script src="../directives/inherited-scope.directive.js"></script>
     <script src="../controllers/directives.controller.js"></script>
 
 </head>
@@ -21,18 +21,18 @@
     <div class="container">
 
         <div class="jumbotron">
-            <h2>Learning : Angular Directives - Shared Scope.</h2>
+            <h2>Learning : Angular Directives - Inherited Scope.</h2>
             <ul class="list-unstyled">
                 <li>
                     <ul>
-                        <li>Scope sharing between parent controller and directive</li>
+                        <li>Directive will have new INHERITED scope from parent controller.</li>
                     </ul>
                 </li>
             </ul>
         </div>
         
-        <button type="submit" class="btn btn-primary btn-xs" ng-click="reverseName()">Reverse</button>  : {{name}}  
-        <div shared-scope></div>
+        <button type="submit" class="btn btn-primary btn-xs" ng-click="reverseName()">Reverse</button>  : {{name}}
+        <div inherited-scope></div>
 
 
     </div>
