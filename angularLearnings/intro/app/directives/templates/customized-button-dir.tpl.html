@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="" ng-app="directiveModule" ng-controller="DirectiveController as cntrl">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link href="../../../vendor/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../vendor/css/bootstrap-theme.min.css" rel="stylesheet">
+    <script src="../../../vendor/js/angular.js"></script>
+    <script src="../app.js"></script>
+    <script src="../services/directive-basics.service.js"></script>
+    <script src="../directives/customized-button.directive.js"></script>
+    <script src="../controllers/directives.controller.js"></script>
+
+</head>
+
+<body>
+
+    <div class="container">
+        
+        <div class="jumbotron">
+            <h2>Learning : Angular Directives - Compile function.</h2>
+            <ul class="list-unstyled">
+                <li>
+                    <ul>
+                         <li>Creating Customized Button Directives</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <button type="submit" class="btn btn-primary btn-large">Click Me!</button>
+        <customized-button type="info" size="large" click-value="Clicked Larged Sized Info Button !!!">Button</customized-button>
+        <customized-button type="info" click-value="Clicked Medium Sized Info Button !!!">Button</customized-button>
+       
+        <customized-button type="submit" size="small" click-value="Clicked Small Sized Submit Button !!!">Button</customized-button>
+        <customized-button type="warning" size="xtrasmall" click-value="Clicked Xtra Small Sized Warning Button !!!">Button</customized-button>
+        
+        
+    </div>
+</body>
+    
+    
+</html>
