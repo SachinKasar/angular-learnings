@@ -4,8 +4,6 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
     <link href="../../../vendor/css/bootstrap.min.css" rel="stylesheet">
     <link href="../../../vendor/css/bootstrap-theme.min.css" rel="stylesheet">
     <script src="../../../vendor/js/angular.js"></script>
@@ -26,17 +24,28 @@
                 <li>
                     <ul>
                         <li>Directive have ISOLATED/DETACHED scope than parent scope.</li>
+                        <li>Prefixes for isolated scope i.e. @,= and &.</li>
                     </ul>
                 </li>
             </ul>
         </div>
-        
-        <button type="submit" class="btn btn-primary btn-xs" ng-click="reverseName()">Reverse</button>  : {{name}}  
-        <div isolated-scope></div>
+
+
+        <div>
+            <label>Name (parent scope) :</label> <strong>{{name}}</strong>
+            <button type="button" type="submit" class="btn btn-primary btn-xs" ng-click="reverseName()">Reverse Name</button>
+        </div>
+
+        <div>
+            <label>Color(parent scope):</label> <strong style="color:{{color}}">{{color|uppercase}}</strong>
+            <button type="button" type="submit" class="btn btn-primary btn-xs" ng-click="randomColor()">Reverse Color</button>
+        </div>
+
+        <isolated-scope name="{{name}}" color="color" reverse="reverseName()"></isolated-scope>
 
 
     </div>
-</body>  
+</body>
 
 
 </html>
