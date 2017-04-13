@@ -1,23 +1,41 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
-    <h2>Learning : Scope inheritance, ng-repeat and READ in scope inheritance</h2>
-	<script src="../vendor/js/angular.js"></script>
+
+    <link href="../vendor/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../vendor/css/bootstrap-theme.min.css" rel="stylesheet">
+
+    <script src="../vendor/js/angular.js"></script>
     <script src="common/controller/scope-inheritance-1.controller.js"></script>
 </head>
 
- 
-<body ng-app="scopeModule1"> <!-- Application bootstrap creating $rootscope -->
-   <ul ng-controller="ScopeController1">  <!-- parent scope -->
-    <li ng-repeat="team in teams"> <!-- child scope -->
-        {{team.name}} has size of {{team.size}}
-        </br>{{getPercentage(team.size)}} % of the Organization's size <!-- Accessing getPercentage from parent scope -->
-    </li>
-    <hr> Organization's total size : {{totalCount}} 
- </ul>
-    
+
+<body ng-app="scopeModule1" class="container">
+    <!-- Application bootstrap creating $rootscope -->
+    <div class="jumbotron">
+        <h2>Learning : Scope inheritance, ng-repeat and READ in scope inheritance.</h2>
+        <ul class="list-unstyled">
+            <li>
+                <ul>
+                    <li>ng-repeat and READ in scope inheritance</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <ul ng-controller="ScopeController1">
+        <!-- parent scope -->
+        <li ng-repeat="team in teams">
+            <!-- child scope -->
+            {{team.name}} has size of {{team.size}}
+            </br>{{getPercentage(team.size)}} % of the Organization's size
+            <!-- Accessing getPercentage from parent scope -->
+        </li>
+        <hr> Organization's total size : {{totalCount}}
+    </ul>
+
 </body>
 
 </html>
-

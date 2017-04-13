@@ -1,15 +1,36 @@
 <!DOCTYPE html>
 <html lang="">
+
 <head>
     <meta charset="UTF-8">
-    <h1>Learning : Two way Data Binding. </h1>
+    <link href="../vendor/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../vendor/css/bootstrap-theme.min.css" rel="stylesheet">
     <script src="../vendor/js/angular.js"></script>
+    <script src="common/controller/first-controller.controller.js"></script>
 </head>
 
- 
-<body ng-app ng-init="topic = 'Two Way Data Binding'">
-    Topic: <input type="text" ng-model="topic">
-    </br><span>{{topic}}</span>
+
+<body ng-app="firstCntrl" ng-controller="FirstCtrl" class="container">
+    <div class="jumbotron">
+        <h2>Learning : Two Way Data Binding.</h2>
+        <ul class="list-unstyled">
+            <li>
+                <ul>
+                    <li>Model getting associated to scope and scope will act as glue for contoller and view</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    Change View:
+    <input type="text" ng-model="topic" class='form-control' />
+
+
+    </br>
+    <button type="submit" class="btn btn-primary btn-md" ng-click="reverseName()">Change Model (through Controller)</button> : {{topic}}
+
+
+
 </body>
 
 </html>

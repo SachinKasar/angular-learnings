@@ -1,15 +1,29 @@
 <!DOCTYPE html>
 <html lang="">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <h2>Learning : Controller As.</h2>
+
+    <link href="../vendor/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../vendor/css/bootstrap-theme.min.css" rel="stylesheet">
     <script src="../vendor/js/angular.js"></script>
     <script src="common/controller/controller-as.controller.js"></script>
 </head>
 
-<body ng-app="controllerAsModule" >
-    
+<body ng-app="controllerAsModule" class="container">
+    <div class="jumbotron">
+        <h2>Learning : Controller As.</h2>
+        <ul class="list-unstyled">
+            <li>
+                <ul>
+                    <li>Controller As syntax</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+
     <div ng-controller="FirstController as cntrl1">
         <div>
             {{cntrl1.name}}
@@ -19,4 +33,5 @@
         </div>
     </div>
 </body>
+
 </html>
