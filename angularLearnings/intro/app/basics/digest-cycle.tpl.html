@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="">
+
+    <head>
+        <meta charset="UTF-8">
+        <link href="../../vendor/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../vendor/css/bootstrap-theme.min.css" rel="stylesheet">
+        <script src="../../vendor/js/angular.js"></script>
+        <script src="../common/controller/first-controller.controller.js"></script>
+    </head>
+
+
+    <body ng-app="firstCntrl" ng-controller="FirstCtrl" class="container">
+        <div class="jumbotron">
+            <h2>Learning : Digest Cycle For Two Way Data Binding.</h2>
+            <ul class="list-unstyled">
+                <li>
+                    <ul>
+                        <li>Dirty checking mechanism for determining model change.</li>
+                        <li>ng-pristine,ng-dirty flags.</li>
+                        <li>DOM event(e.g. text entered) -> Event Listner -> $scope.$apply -> $scope.$digest -> $scope.$watch -> Render DOM </li>
+                        <li>Digest loop iteration</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        Change View:
+        <input type="text" ng-model="topic" class='form-control' />
+        <!--Will be added to watch expression -->
+        {{getTopic()}}
+        <!--Interpolation Will be added to watch expression -->
+
+        <!--{{ random() }}-->
+        <!--DIgest loop will try for 10 times before giving up-->
+
+
+
+
+    </body>
+
+</html>

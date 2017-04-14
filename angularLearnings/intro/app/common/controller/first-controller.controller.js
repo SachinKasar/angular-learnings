@@ -4,10 +4,17 @@ firstCntrl.controller("FirstCtrl", function ($scope) {
     $scope.topic = 'Angular';
     
     $scope.getName = function() {
+        
         return $scope.name;
     };
     
     $scope.reverseName = function(){
         $scope.topic = $scope.topic.split("").reverse().join("");
     };
+    
+    $scope.getTopic = function() {
+        console.log('dirty-checking');
+        return $scope.topic;
+    };
+    $scope.random = Math.random;
 });
