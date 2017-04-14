@@ -22,6 +22,7 @@ You can use any IDE, personally I started with Brackets , which allows "Live Pre
 4. Feel free to add new topics based expample in this repo.
 
 
+
 * How to commit in Git (with Git Bash)
 
 1. Update/add file for repo as per requirement
