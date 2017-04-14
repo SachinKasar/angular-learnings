@@ -6,20 +6,22 @@
         <link href="../../vendor/css/bootstrap.min.css" rel="stylesheet">
         <link href="../../vendor/css/bootstrap-theme.min.css" rel="stylesheet">
         <script src="../../vendor/js/angular.js"></script>
-        <script src="../common/controller/first-controller.controller.js"></script>
+        <script src="../common/controller/digest.controller.js"></script>
     </head>
 
 
-    <body ng-app="firstCntrl" ng-controller="FirstCtrl" class="container">
+    <body ng-app="digestModule" ng-controller="DigestController" class="container">
         <div class="jumbotron">
             <h2>Learning : Digest Cycle For Two Way Data Binding.</h2>
             <ul class="list-unstyled">
                 <li>
                     <ul>
-                        <li>Dirty checking mechanism for determining model change.</li>
-                        <li>ng-pristine,ng-dirty flags.</li>
-                        <li>DOM event(e.g. text entered) -> Event Listner -> $scope.$apply -> $scope.$digest -> $scope.$watch -> Render DOM </li>
+                        <li>Dirty checking mechanism(ng-pristine,ng-dirty flags) for determining model change.</li>
+                        <li>
+                            DOM event(text entered) -> Event Listner -> $apply(),$digest() and $watch() -> Render DOM </li>
                         <li>Digest loop iteration</li>
+                        <li>ng-click auto digest example</li>
+                        <li>Mocked Digest Cycle example ($apply - $digest - $watch)</li>
                     </ul>
                 </li>
             </ul>
@@ -35,6 +37,13 @@
         <!--DIgest loop will try for 10 times before giving up-->
 
 
+       
+
+        </p><div>----------------------------------------------------------------------</div>
+        </p>  {{data.time}}
+    </p>
+    <button type="submit" class="btn btn-primary btn-md"  ng-click="updateTime()">ng-click(Auto Digest)</button>
+    <button type="submit" class="btn btn-primary btn-md"  id="updateTimeButton"  >Mocked Digest Cycle</button>
 
 
     </body>
