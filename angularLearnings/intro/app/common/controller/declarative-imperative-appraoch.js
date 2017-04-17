@@ -1,22 +1,22 @@
-var declarativeImperativeModule = angular.module("declarativeImperativeModule",[]);
-declarativeImperativeModule.constant("MAX_LENGTH","50"); // Constants for module.
+var declarativeImperativeModule = angular.module("declarativeImperativeModule", []);
 
-declarativeImperativeModule.controller("DeclarativeImperativeController", function ($scope,MAX_LENGTH) { // Dependency Injection for Collaborator objects
-	$scope.message = "Welcome";
-    
-    $scope.remaining = function () {
+
+declarativeImperativeModule.controller("DeclarativeImperativeController", function ($scope) {
+    $scope.message = "Welcome";
+    $scope.maxLength = 50;
+
+    $scope.enteredCharsLength = function () {
         var textLength = $scope.message.length ? $scope.message.length : 0;
-        return MAX_LENGTH - textLength;
+        return textLength;
     };
-    
+
     $scope.clear = function () {
-       $scope.message = "";
+        $scope.message = "";
     };
-    
+
     $scope.hasValidLength = function () {
         return $scope.message.length > 0;
     };
-    
-    
-});
 
+
+});

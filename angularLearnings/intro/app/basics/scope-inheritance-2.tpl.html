@@ -1,36 +1,36 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <meta charset="UTF-8">
+<head>
+    <meta charset="UTF-8">
 
-        <link href="../../vendor/css/bootstrap.min.css" rel="stylesheet">
-        <link href="../../vendor/css/bootstrap-theme.min.css" rel="stylesheet">
-        <script src="../../vendor/js/angular.js"></script>
-        <script src="../common/controller/scope-inheritance-2.controller.js"></script>
-    </head>
+    <link href="../../vendor/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../vendor/css/bootstrap-theme.min.css" rel="stylesheet">
+    <script src="../../vendor/js/angular.js"></script>
+    <script src="../common/controller/scope-inheritance-2.controller.js"></script>
+</head>
 
-    <body ng-app="scopeModule2" ng-init="name='Angular'" class="container">
-        <!-- Bootstrap creating $rootscope -->
+<body ng-app="scopeModule2" ng-init="name='Angular'" class="container">
+    <!-- Bootstrap creating $rootscope -->
 
-        <div class="jumbotron">
-            <h2>Learning : Reading and writing in scope inheritance.</h2>
-            <ul class="list-unstyled">
-                <li>
-                    <ul>
-                        <li>Reading and writing in scope inheritance</li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
+    <div class="jumbotron">
+        <h2>Learning : Scope inheritance - 2</h2>
+        <ul class="list-unstyled">
+            <li>
+                <ul>
+                    <li>Write in scope inheritance</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
 
-        <h1>Scope 1 : {{name}}</h1>
-        <div ng-controller="ScopeController2">
-            <!-- new scope created here -->
-            Scope 2 :
-            <input type="text" ng-model="name" class='form-control' />
-            <h2>scope 2 : {{name}}</h2>
-        </div>
-    </body>
+    <h1>Scope 1 : {{name}}</h1>
+    <div ng-controller="ScopeController2">
+        <!-- new scope created here -->
+        Scope 2 :
+        <input type="text" ng-model="name" class='form-control' />
+        <h2>scope 2 : {{name}}</h2>
+    </div>
+</body>
 
 </html>

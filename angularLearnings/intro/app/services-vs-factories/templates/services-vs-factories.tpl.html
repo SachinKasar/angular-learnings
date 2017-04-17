@@ -1,38 +1,44 @@
 <!DOCTYPE html>
 <html lang="">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
+
     <link href="../../../vendor/css/bootstrap.min.css" rel="stylesheet">
- <link href="../../../vendor/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="../../../vendor/css/bootstrap-theme.min.css" rel="stylesheet">
     <script src="../../../vendor/js/angular.js"></script>
 
     <script src="../app.js"></script>
     <script src="../services/factory.service.js"></script>
     <script src="../services/service.service.js"></script>
     <script src="../controller/services-vs-factories.controller.js"></script>
-    
+
 </head>
 
 <body ng-app="serviceAndFactoryModule" ng-controller="ServiceAndFactoryController as cntrl" class="container">
     <div class="jumbotron">
-         <h2>Learning : Services VS Factories.</h2>
+        <h2>Learning : Services VS Factories.</h2>
         <ul class="list-unstyled">
             <li>
                 <ul>
+
                     <li>Services VS Factories.</li>
                 </ul>
             </li>
         </ul>
     </div>
-	
-    <div >
-         </br><div>
-            </br></br>  From Service Call  --- <strong>{{cntrl.getDetailsFromService()}}</strong>  
-            </br></br>  From Factory Call  --- <strong>{{cntrl.getDetailsFromFactory()}}</strong>
+
+    <div>
+        </br>
+        <div>
+            </br>
+            </br> From Service Call --- <strong>{{cntrl.getDetailsFromService()}}</strong>
+            </br>
+            </br> From Factory Call --- <strong>{{cntrl.getDetailsFromFactory()}}</strong>
         </div>
-         
+
     </div>
-    </body>
+</body>
+
 </html>

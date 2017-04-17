@@ -10,7 +10,7 @@
 </head>
 
 
-<body class="container" ng-app="firstCntrl" ng-controller="FirstCtrl">
+<body ng-app="firstCntrl" ng-controller="FirstCtrl" class="container">
     <!-- Angular bootstrap -->
     <div class="jumbotron">
         <h2>Learning : Angular controller,scope property and functions.</h2>
@@ -23,16 +23,21 @@
             </li>
         </ul>
     </div>
+
+
     <div>
         Name :
         <input type="text" ng-model="name" class='form-control' />
         <br>
-        </br>By ng-expression -
+        </br>By expression -
         <h1 style="color:red"> {{name}} </h1>
         </br>By scope.getName() -
         <h1 style="color:blue"> {{getName()}} </h1>
-        </br>By ng-bind : <h1><div style="color:black"ng-bind="name">123 </div> </h1> 
+        </br>By ng-bind :
+        <h1><div ng-bind="name" style="color:black">123</div> </h1>
     </div>
+
+
 </body>
 
 </html>

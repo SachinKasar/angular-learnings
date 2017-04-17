@@ -1,51 +1,50 @@
 <!DOCTYPE html>
 <html lang="">
 
-    <head>
-        <meta charset="UTF-8">
-        <link href="../../vendor/css/bootstrap.min.css" rel="stylesheet">
-        <link href="../../vendor/css/bootstrap-theme.min.css" rel="stylesheet">
-        <script src="../../vendor/js/angular.js"></script>
-        <script src="../common/controller/digest.controller.js"></script>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <link href="../../vendor/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../vendor/css/bootstrap-theme.min.css" rel="stylesheet">
+    <script src="../../vendor/js/angular.js"></script>
+    <script src="../common/controller/digest.controller.js"></script>
+</head>
 
 
-    <body ng-app="digestModule" ng-controller="DigestController" class="container">
-        <div class="jumbotron">
-            <h2>Learning : Digest Cycle For Two Way Data Binding.</h2>
-            <ul class="list-unstyled">
-                <li>
-                    <ul>
-                        <li>Dirty checking mechanism(ng-pristine,ng-dirty flags) for determining model change.</li>
-                        <li>
-                            DOM event(text entered) -> Event Listner -> $apply(),$digest() and $watch() -> Render DOM </li>
-                        <li>Digest loop iteration</li>
-                        <li>ng-click auto digest example</li>
-                        <li>Mocked Digest Cycle example ($apply - $digest - $watch)</li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
+<body ng-app="digestModule" ng-controller="DigestController" class="container">
+    <div class="jumbotron">
+        <h2>Learning : Digest cycle for two way data binding</h2>
+        <ul class="list-unstyled">
+            <li>
+                <ul>
+                    <li>Dirty check (ng-pristine,ng-dirty flags)</li>
+                    <li>
+                        DOM event(text entered)->Event Listner -> $apply,$digest and $watch -> Render DOM </li>
+                    <li>Digest loop iteration</li>
+                    <li>ng-click auto digest example</li>
+                    <li>Mocked Digest Cycle example ($apply - $digest - $watch)</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
 
-        Change View:
-        <input type="text" ng-model="topic" class='form-control' />
-        <!--Will be added to watch expression -->
-        {{getTopic()}}
-        <!--Interpolation Will be added to watch expression -->
-
-        <!--{{ random() }}-->
-        <!--DIgest loop will try for 10 times before giving up-->
+    Change View:
+    <input type="text" ng-model="topic" class='form-control' /> {{getTopic()}}
 
 
-       
+    <!--{{ random() }}-->
+    <!--DIgest loop will try for 10 times before giving up-->
 
-        </p><div>----------------------------------------------------------------------</div>
-        </p>  {{data.time}}
+
+
+
     </p>
-    <button type="submit" class="btn btn-primary btn-md"  ng-click="updateTime()">ng-click(Auto Digest)</button>
-    <button type="submit" class="btn btn-primary btn-md"  id="updateTimeButton"  >Mocked Digest Cycle</button>
+    <div>----------------------------------------------------------------------</div>
+    </p> {{data.time}}
+    </p>
+    <button type="submit" ng-click="updateTime()" class="btn btn-primary btn-md">ng-click(Auto Digest)</button>
+    <button type="submit" id="updateTimeButton" class="btn btn-primary btn-md">Mocked Digest Cycle</button>
 
 
-    </body>
+</body>
 
 </html>
