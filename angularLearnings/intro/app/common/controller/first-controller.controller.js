@@ -1,5 +1,5 @@
-var firstCntrl = angular.module("firstCntrl", []);
-firstCntrl.controller("FirstCtrl", function ($scope) {
+var firstCntrlModule = angular.module("firstCntrlModule", []);
+firstCntrlModule.controller("FirstCtrl", function ($scope) {
     $scope.name = 'First Controller';
     $scope.topic = 'Angular';
 
