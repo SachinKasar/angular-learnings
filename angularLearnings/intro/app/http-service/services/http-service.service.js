@@ -2,21 +2,34 @@ httpServiceModule.service('httpService', function ($http, $q) { // dependency fo
 
 
     this.getEmployees = function () {
+        var deferred = $q.defer();
+
         var config = {
             headers: {
                 'Authorization': 'Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ=='
             }
         };
-        var promise1 = $http.get('http://localhost:3000/employees', config);
-        var promise2 = promise1.then(function (response) {
-            console.log("httpService is Able to fullfill the promise  ---- " + response.statusText);
-            return $q.resolve(response.data);
-        }, function (response) {
-            console.log("httpService CAN NOT fullfill the promise  ---- " + response.statusText);
-            return $q.reject(response.data);
-        });
 
-        return promise2;
+        var promise1 = $http.get('http://localhost:3000/employees', config);
+
+        //  var promise2 = promise1.then(function (response) {
+        promise1.then(,
+            function (response) {
+                console.log(response);
+                console.log("httpService is Able to fullfill the promise  ---- " + response.statusText);
+                console.log("HEADRES = " + response.headers('Content-type') + "  STATUS = " + response.status);
+
+                return deferred.resolve(response.data); // internal promise
+            },
+            function (response) {
+                console.log(response);
+                console.log("httpService CAN NOT fullfill the promise  ---- " + response.statusText);
+                return deferred.reject(response.data);
+            }
+
+        );
+
+        return deferred.promise;
     }
 
     this.updateEmployee = function (employeeDetails) {

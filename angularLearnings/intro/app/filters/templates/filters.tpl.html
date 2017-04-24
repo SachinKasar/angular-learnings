@@ -54,8 +54,8 @@
 
                 <tr ng-repeat="employee in cntrl.employees | orderBy : 'name' | filter : searchText" ng-click="cntrl.showSelectedEmployee(employee)">
                     <td>{{$index+1}}</td>
-                     <td><span ng-bind-html="employee.name | highlightWord : searchText">{{ employee.name}}</span></td>
-                     <td>{{employee.location}}</td>
+                    <td><span ng-bind-html="employee.name | highlightWord : searchText">{{ employee.name}}</span></td>
+                    <td>{{employee.location}}</td>
                     <td>{{employee.phone}}</td>
                     <td>{{employee.countryCode}}</td>
                 </tr>
@@ -95,10 +95,17 @@
                     <span  ng-hide="cntrl.updateFlag">{{cntrl.selectedEmployee.countryCode}}</span>
                     </p>
 
+                    <p>
+                        <span class="media-heading">Total Count For {{cntrl.selectedEmployee.countryCode}} : 
+                    <span>{{cntrl.filterByCountry(cntrl.selectedEmployee.countryCode).length}}</span>
+                    </p>
+
+
                     <button class="btn btn-primary" ng-hide="!cntrl.selectedEmployee || cntrl.updateFlag" ng-click="cntrl.toggleUpdateFlag()">Edit</button>
                     <button class="btn btn-primary" ng-show="cntrl.selectedEmployee && cntrl.updateFlag" ng-click="cntrl.updateEmployee()">Save</button>
                     <button class="btn btn-primary" type="button" ng-click="cntrl.addEmployee()">Add</button>
                     <button class="btn btn-primary" ng-click="cntrl.deleteEmployee()">Delete</button>
+
                 </div>
             </div>
         </div>

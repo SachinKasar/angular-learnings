@@ -13,11 +13,14 @@ function HttpServiceController(httpService) {
     function onInitFetch() {
         httpService.getEmployees() // 'httpService' has made promise with 'HttpServiceController' to get these employees
             .then(function (data) {
+                    console.log(data);
                     console.log("Promise fulfilled by httpService, so HttpServiceController will some action accordingly ---- ");
                     self.employees = data;
                     self.successFetchNotificationMessage = "Fetched Employee Details Successfully !!!"
                 },
-                function (error) {
+                function (data) {
+                    console.log(data);
+                    self.employees = data;
                     console.log("Promise BROKEN by httpService, so HttpServiceController will take some action  accordingly ---- ");
                     self.errorFetchNotificationMessage = "Unable to fetch eployees details. Please verify json-server !!!"
                 }

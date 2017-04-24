@@ -1,7 +1,7 @@
 filtersModule.controller("FiltersController", FiltersController);
 
 
-function FiltersController(filtersService) {
+function FiltersController(filtersService, employeesByCountryFilter) {
     // this = $scope;  // Angular do this by default for Controller As syntax 
     var self = this
     self.updateFlag = false;
@@ -15,16 +15,21 @@ function FiltersController(filtersService) {
             self.successFetchNotificationMessage = "Fetched Employee Details Successfully !!!"
         },
         function () {
-           self.errorFetchNotificationMessage = "Unable to fetch eployees details. Please verify json-server !!!"
+            self.errorFetchNotificationMessage = "Unable to fetch eployees details. Please verify json-server !!!"
         }
     );
 
+    this.filterByCountry = function (countryCode) {
+        var data = employeesByCountryFilter(self.employees, countryCode);
+        return data;
+
+    }
 
     this.showSelectedEmployee = function (employee) {
         this.successFetchNotificationMessage = undefined;
         this.errorFetchNotificationMessage = undefined;
         this.selectedEmployee = employee;
-     }
+    }
 
     this.toggleUpdateFlag = function () {
         this.updateFlag = !this.updateFlag;
@@ -32,28 +37,28 @@ function FiltersController(filtersService) {
 
     this.updateEmployee = function () {
         this.toggleUpdateFlag();
-        if(self.addFlag) { // CREATE
+        if (self.addFlag) { // CREATE
             filtersService.addEmployee(this.selectedEmployee);
             self.addFlag = false;
         } else { // UPDATE
             filtersService.updateEmployee(this.selectedEmployee);
         }
-          
+
     }
-    
-    
+
+
     this.addEmployee = function () {
         this.updateFlag = true;
         this.addFlag = true;
         this.selectedEmployee = {
             "id": new Date().toTimeString()
         };
-   }
-    
-   this.deleteEmployee = function () { // DELETE
-       filtersService.deleteEmployee(this.selectedEmployee);
-   }
-    
+    }
+
+    this.deleteEmployee = function () { // DELETE
+        filtersService.deleteEmployee(this.selectedEmployee);
+    }
+
 
 
 }
